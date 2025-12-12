@@ -15,17 +15,17 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
       - name: Set up poetry
         uses: Gr1N/setup-poetry@v9
         with:
-          poetry-version: "2.1.1"
+          poetry-version: "2.2.1"
 
       - name: Build
         run: poetry build
