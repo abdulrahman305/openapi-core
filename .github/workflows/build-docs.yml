@@ -29,7 +29,7 @@ jobs:
         run: poetry config virtualenvs.in-project true
 
       - name: Set up cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache
         with:
           path: .venv
@@ -46,7 +46,7 @@ jobs:
         run: |
           poetry run python -m mkdocs build --clean --site-dir ./_build/html --config-file mkdocs.yml
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         name: Upload docs as artifact
         with:
           name: docs-html
